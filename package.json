@@ -1,0 +1,27 @@
+{
+  "name": "tic-tac-toe-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:client": "npm run dev --workspace=packages/client",
+    "dev:server": "npm run dev --workspace=packages/server",
+    "build": "npm run build --workspaces --if-present",
+    "build:shared": "npm run build --workspace=packages/shared",
+    "build:client": "npm run build --workspace=packages/client",
+    "build:server": "npm run build --workspace=packages/server",
+    "test": "npm run test --workspaces --if-present",
+    "test:shared": "npm run test --workspace=packages/shared",
+    "lint": "npx oxlint .",
+    "format": "npx oxfmt . --write",
+    "db:generate": "npm run db:generate --workspace=packages/server",
+    "db:push": "npm run db:push --workspace=packages/server",
+    "db:studio": "npm run db:studio --workspace=packages/server"
+  },
+  "devDependencies": {
+    "oxlint": "^0.15.0",
+    "oxfmt": "^0.15.0",
+    "typescript": "^5.5.0"
+  }
+}
