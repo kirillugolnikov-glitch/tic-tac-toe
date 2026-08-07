@@ -33,7 +33,9 @@ jobs:
         run: npm run format --check
 
       - name: Run tests (shared)
-        run: npm run test:shared
+        run: |
+          cd packages/shared
+          bun test
 
   build-client:
     needs: lint-and-test
