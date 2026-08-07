@@ -33,9 +33,8 @@ jobs:
         run: npm run format --check
 
       - name: Run tests (shared)
-        run: |
-          cd packages/shared
-          bun test --reporter=verbose
+        run: bun run test
+        working-directory: packages/shared
 
   build-client:
     needs: lint-and-test
