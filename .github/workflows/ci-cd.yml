@@ -35,7 +35,7 @@ jobs:
       - name: Run tests (shared)
         run: |
           cd packages/shared
-          bun test
+          bun test --reporter=verbose
 
   build-client:
     needs: lint-and-test
